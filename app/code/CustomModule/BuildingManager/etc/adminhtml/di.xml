@@ -1,0 +1,88 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="buildingmanager_user_listing_data_source" xsi:type="string">CustomModule\BuildingManager\Model\ResourceModel\User\Collection</item>
+                <item name="buildingmanager_project_listing_data_source" xsi:type="string">CustomModule\BuildingManager\Model\ResourceModel\Project\Collection</item>
+                <item name="buildingmanager_historyroom_listing_data_source" xsi:type="string">ProjectVirtualType</item>
+                <item name="buildingmanager_roomdevice_listing_data_source" xsi:type="string">CustomModule\BuildingManager\Model\ResourceModel\RoomDevice\Collection</item>
+                <item name="buildingmanager_room_listing_data_source" xsi:type="string">RoomVirtualType</item>
+                <item name="buildingmanager_userroom_listing_data_source" xsi:type="string">UserRoomVirtualType</item>
+                <item name="buildingmanager_device_listing_data_source" xsi:type="string">DeviceVirtualType</item>
+                <item name="buildingmanager_model_listing_data_source" xsi:type="string">ModelVirtualType</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="CustomModule\BuildingManager\Model\ResourceModel\User\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">custom_module_user</argument>
+            <argument name="resourceModel" xsi:type="string">CustomModule\BuildingManager\Model\ResourceModel\User</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="ProjectVirtualType" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">custom_module_history_room</argument>
+            <argument name="resourceModel" xsi:type="string">CustomModule\BuildingManager\Model\ResourceModel\HistoryRoom</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="CustomModule\BuildingManager\Model\ResourceModel\Project\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">custom_module_project</argument>
+            <argument name="resourceModel" xsi:type="string">CustomModule\BuildingManager\Model\ResourceModel\Project</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="CustomModule\BuildingManager\Model\ResourceModel\RoomDevice\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">custom_module_room_device</argument>
+            <argument name="resourceModel" xsi:type="string">CustomModule\BuildingManager\Model\ResourceModel\RoomDevice</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="UserRoomVirtualType" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">custom_module_user_room</argument>
+            <argument name="resourceModel" xsi:type="string">CustomModule\BuildingManager\Model\ResourceModel\UserRoom</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="DeviceVirtualType" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">custom_module_device</argument>
+            <argument name="resourceModel" xsi:type="string">CustomModule\BuildingManager\Model\ResourceModel\Device</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="ModelVirtualType" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">custom_module_model</argument>
+            <argument name="resourceModel" xsi:type="string">CustomModule\BuildingManager\Model\ResourceModel\Model</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="RoomVirtualType" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">custom_module_room</argument>
+            <argument name="resourceModel" xsi:type="string">CustomModule\BuildingManager\Model\ResourceModel\Room</argument>
+        </arguments>
+    </virtualType>
+    <!-- Image Uploader -->
+    <virtualType name="CustomModuleBuildingManagerVirtualTypeImageUpload" type="Magento\Catalog\Model\ImageUploader">
+        <arguments>
+            <argument name="baseTmpPath" xsi:type="string">productreview/tmp/image</argument>
+            <argument name="basePath" xsi:type="string">productreview/image</argument>
+            <argument name="allowedExtensions" xsi:type="array">
+                <item name="jpg" xsi:type="string">jpg</item>
+                <item name="jpeg" xsi:type="string">jpeg</item>
+                <item name="gif" xsi:type="string">gif</item>
+                <item name="png" xsi:type="string">png</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="CustomModule\BuildingManager\Controller\Adminhtml\Project\Upload">
+        <arguments>
+            <argument name="imageUploader" xsi:type="object">CustomModuleBuildingManagerVirtualTypeImageUpload</argument>
+        </arguments>
+    </type>
+    <!-- End Image Uploader -->
+
+    <!--Plugin Custom Account Setting-->
+    <type name="Magento\Setup\Controller\Navigation">
+        <plugin name="Custom_account_setting" type="CustomModule\BuildingManager\Plugin\Account\CustomAccount" sortOrder="1" />
+    </type>
+</config>

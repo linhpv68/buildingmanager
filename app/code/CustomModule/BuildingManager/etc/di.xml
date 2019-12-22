@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="CustomModule\BuildingManager\Api\UserManagementInterface"
+                type="CustomModule\BuildingManager\Model\UserApi"/>
+    <preference for="CustomModule\BuildingManager\Api\DeviceManagementInterface"
+                type="CustomModule\BuildingManager\Model\DeviceApi"/>
+    <preference for="CustomModule\BuildingManager\Api\ProjectManagementInterface"
+                type="CustomModule\BuildingManager\Model\ProjectApi"/>
+    <preference for="CustomModule\BuildingManager\Api\RoomManagementInterface"
+                type="CustomModule\BuildingManager\Model\RoomApi"/>
+    <preference for="CustomModule\BuildingManager\Api\HistoryRoomManagementInterface"
+                type="CustomModule\BuildingManager\Model\HistoryRoomApi"/>
+    <preference for="CustomModule\BuildingManager\Api\FavoriteManagementInterface"
+                type="CustomModule\BuildingManager\Model\FavoriteApi"/>
+    <preference for="Magento\Framework\Webapi\Rest\Response\Renderer\Json"
+                type="CustomModule\BuildingManager\Webapi\Rest\Response\Renderer\CustomJson"/>
+</config>

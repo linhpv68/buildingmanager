@@ -1,0 +1,83 @@
+<?xml version="1.0" ?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/cusmtommodule-buildingmanager/user/login"  method="POST">
+        <service class="CustomModule\BuildingManager\Api\UserManagementInterface" method="login"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/cusmtommodule-buildingmanager/user/change_password"  method="POST">
+        <service class="CustomModule\BuildingManager\Api\UserManagementInterface" method="changePassword"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/cusmtommodule-buildingmanager/device"  method="POST">
+        <service class="CustomModule\BuildingManager\Api\DeviceManagementInterface" method="getById"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/buildingmanager/device/update"  method="POST">
+        <service class="CustomModule\BuildingManager\Api\DeviceManagementInterface" method="updateByAdmin"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/cusmtommodule-buildingmanager/project" method="GET">
+        <service class="CustomModule\BuildingManager\Api\ProjectManagementInterface" method="view"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/cusmtommodule-buildingmanager/room/projectId" method="POST">
+        <service class="CustomModule\BuildingManager\Api\RoomManagementInterface" method="getByProject"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/cusmtommodule-buildingmanager/room/token" method="POST">
+        <service class="CustomModule\BuildingManager\Api\RoomManagementInterface" method="getByUser"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/cusmtommodule-buildingmanager/history-room/roomId/:roomId" method="GET">
+        <service class="CustomModule\BuildingManager\Api\HistoryRoomManagementInterface" method="getByRoomId"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/cusmtommodule-buildingmanager/history-room/add" method="POST">
+        <service class="CustomModule\BuildingManager\Api\HistoryRoomManagementInterface" method="saveData"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/buildingmanager/favorite/add" method="POST">
+        <service class="CustomModule\BuildingManager\Api\FavoriteManagementInterface" method="add"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/buildingmanager/favorite/get/by-user" method="POST">
+        <service class="CustomModule\BuildingManager\Api\FavoriteManagementInterface" method="getByUser"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+    <route url="/V1/cusmtommodule-buildingmanager/project/:id" method="GET">
+        <service class="CustomModule\BuildingManager\Api\ProjectManagementInterface" method="getById"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+    <route url="/V1/customers/authenticate/:email/:password" method="GET">
+        <service class="Magento\Customer\Api\AccountManagementInterface" method="authenticate"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+</routes>

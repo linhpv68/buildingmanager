@@ -1,0 +1,16 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <link src="CustomModule_BuildingManager::css/style.css" rel="stylesheet"
+              type="text/css"/>
+<!--        <link src="CustomModule_BuildingManager::js/custom.js"/>-->
+    </head>
+    <body>
+        <referenceContainer name="page.main.actions" remove="true"/>
+        <referenceContainer name="content">
+            <referenceBlock name="dashboard" remove="true"/>
+            <block class="CustomModule\BuildingManager\Block\Adminhtml\Dashboard" name="custom_dashboard"
+                   template="CustomModule_BuildingManager::dashboard.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

@@ -1,0 +1,77 @@
+<?php
+/**
+ * cms-nckh - dashboard.phtml
+ *
+ * Initial version by: linhphung
+ * Initial version create on : 23/08/2019
+ *
+ */
+/** @var $block CustomModule\BuildingManager\Block\Adminhtml\Dashboard
+ */
+$total = $block->CountRecord();
+$urlUser = $block->getUrl('buildingmanager/user/index/');
+$urlProject = $block->getUrl('buildingmanager/project/index/');
+$urlRoom = $block->getUrl('buildingmanager/room/index/');
+$urlDevice = $block->getUrl('buildingmanager/device/index/');
+$urlModel = $block->getUrl('buildingmanager/model/index/');
+?>
+
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
+                <a href="<?= $urlUser ?>">
+                    <div class="card-box noradius noborder bg-default">
+                        <h6 class="text-white text-uppercase m-b-20">Người Dùng</h6>
+                        <h1 class="total-info"><?=$total['user']?></h1>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
+                <a href="<?= $urlProject ?>">
+                    <div class="card-box noradius noborder bg-warning">
+                        <i class="fa fa-bar-chart float-right text-white"></i>
+                        <h6 class="text-white text-uppercase m-b-20">Dự Án</h6>
+                        <h1 class="total-info"><?=$total['project']?></h1>
+                        <!--                            <span class="text-white">Bounce rate: 25%</span>-->
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
+                <a href="<?= $urlRoom ?>">
+                    <div class="card-box noradius noborder bg-info">
+                        <i class="fa fa-user-o float-right text-white"></i>
+                        <h6 class="text-white text-uppercase m-b-20">Căn Hộ</h6>
+                        <h1 class="total-info"><?=$total['room']?></h1>
+                        <!--                            <span class="text-white">25 New Users</span>-->
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
+                <a href="<?= $urlDevice ?>">
+                    <div class="card-box noradius noborder bg-danger">
+                        <i class="fa fa-bell-o float-right text-white"></i>
+                        <h6 class="text-white text-uppercase m-b-20">Thiết Bị</h6>
+                        <h1 class="total-info"><?=$total['device']?></h1>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
+                <a href="<?= $urlModel ?>">
+                    <div class="card-box noradius noborder bg-success">
+                        <i class="fa fa-bell-o float-right text-white"></i>
+                        <h6 class="text-white text-uppercase m-b-20">Mô hình 3D</h6>
+                        <h1 class="total-info"><?=$total['model']?></h1>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <!-- end row -->
+
+    </div>
+    <!-- END container-fluid -->
+</div>

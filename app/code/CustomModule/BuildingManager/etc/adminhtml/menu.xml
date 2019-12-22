@@ -1,0 +1,85 @@
+<?xml	version="1.0"?>
+<config	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add
+                id="CustomModule_BuildingManager::building_manager"
+                title="QUẢN LÝ THÔNG TIN CÔNG TRÌNH"
+                module="CustomModule_BuildingManager"
+                sortOrder="31"
+                resource="CustomModule_BuildingManager::building_manager"
+        />
+        <add
+                id="CustomModule_BuildingManager::user"
+                title="Người Dùng"
+                module="CustomModule_BuildingManager"
+                sortOrder="10"
+                action="buildingmanager/user/index"
+                resource="CustomModule_BuildingManager::user"
+                parent="CustomModule_BuildingManager::building_manager"
+        />
+        <add
+                id="CustomModule_BuildingManager::project"
+                title="Dự Án"
+                module="CustomModule_BuildingManager"
+                sortOrder="80"
+                action="buildingmanager/project/index"
+                resource="CustomModule_BuildingManager::project"
+                parent="CustomModule_BuildingManager::building_manager"
+        />
+        <add
+                id="CustomModule_BuildingManager::model"
+                title="Mô Hình 3D"
+                module="CustomModule_BuildingManager"
+                sortOrder="30"
+                action="buildingmanager/model/index"
+                resource="CustomModule_BuildingManager::model"
+                parent="CustomModule_BuildingManager::building_manager"
+        />
+        <add
+                id="CustomModule_BuildingManager::device"
+                title="Thiết Bị"
+                module="CustomModule_BuildingManager"
+                sortOrder="40"
+                action="buildingmanager/device/index"
+                resource="CustomModule_BuildingManager::device"
+                parent="CustomModule_BuildingManager::building_manager"
+        />
+        <add
+                id="CustomModule_BuildingManager::historyroom"
+                title="Lịch sử sửa chữa căn hộ "
+                module="CustomModule_BuildingManager"
+                sortOrder="70"
+                action="buildingmanager/historyroom/index"
+                resource="CustomModule_BuildingManager::historyroom"
+                parent="CustomModule_BuildingManager::building_manager"
+        />
+        <add
+                id="CustomModule_BuildingManager::roomdevice"
+                title="Thiết Bị Căn Hộ"
+                module="CustomModule_BuildingManager"
+                sortOrder="60"
+                action="buildingmanager/roomdevice/index"
+                resource="CustomModule_BuildingManager::roomdevice"
+                parent="CustomModule_BuildingManager::building_manager"
+        />
+        <add
+                id="CustomModule_BuildingManager::room"
+                title="Căn Hộ"
+                module="CustomModule_BuildingManager"
+                sortOrder="50"
+                action="buildingmanager/room/index"
+                resource="CustomModule_BuildingManager::room"
+                parent="CustomModule_BuildingManager::building_manager"
+        />
+        <add
+                id="CustomModule_BuildingManager::userroom"
+                title="Tài khoản căn hộ"
+                module="CustomModule_BuildingManager"
+                sortOrder="20"
+                action="buildingmanager/userroom/index"
+                resource="CustomModule_BuildingManager::userroom"
+                parent="CustomModule_BuildingManager::building_manager"
+        />
+    </menu>
+</config>
